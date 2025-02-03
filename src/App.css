@@ -1,0 +1,7 @@
+body{
+    background-color: darkslategray;
+    color: white;
+}
+body::-webkit-scrollbar {
+    display: none; 
+}
