@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function Signup() {
-    // const url="http://localhost:1000";
+    const url="http://localhost:1000";
     
     const  [name, setName] = useState("")
     const  [email, setEmail] = useState("")

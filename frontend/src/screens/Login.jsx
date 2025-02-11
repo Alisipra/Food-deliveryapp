@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export default function Login() {
-  // const url = "http://localhost:1000";
+  const url = "http://localhost:1000";
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_BACKEND_BASEURL}/login`,
+        `${url}/login`,
         { email, password },
         {
           headers: {

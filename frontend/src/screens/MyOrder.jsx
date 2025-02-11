@@ -9,10 +9,10 @@ export default function MyOrder() {
   
   const fetchMyOrder = async () => {
     let userEmail = localStorage.getItem("email");
-
+    const url = "http://localhost:1000";
     try {
         let response = await axios.post(
-            `${import.meta.env.VITE_REACT_BACKEND_BASEURL}/myorderdata`,
+            `${url}/myorderdata`,
             { email: userEmail },
             {
                 headers: {
@@ -45,7 +45,9 @@ export default function MyOrder() {
 
       <div className="container">
         <div className="row">
-          {orderData.length > 0 ? (
+          
+          {orderData.length==0 ? <h1>"No Order Exists Yet..." </h1>:
+           orderData.length > 0 ? (
             orderData.map((item, index) => (
               <div key={index}>
                 {item.Order_date ? (
@@ -63,7 +65,7 @@ export default function MyOrder() {
                           <span className="m-1">Qty: {item.qty}</span>
                           <span className="m-1">Size: {item.size}</span>
                           <div className="d-inline ms-2 h-100 w-20 fs-5">
-                            ₹{item.price}/-
+                            {item.price}Rs/-
                           </div>
                         </div>
                       </div>
@@ -75,6 +77,8 @@ export default function MyOrder() {
           ) : (
             <div>No orders found!</div>
           )}
+          
+         
         </div>
       </div>
 
