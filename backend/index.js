@@ -18,7 +18,9 @@ const corsOptions={
 }
 app.use(Cors(corsOptions));
 app.use(bodyParser.json());
-
+// app.get("/",(req,res)=>{
+res.send("well come to the server")
+})
 ///userRouter
 app.use("/",userRouter);
 
