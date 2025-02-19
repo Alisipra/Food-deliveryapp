@@ -12,7 +12,7 @@ export default function MyOrder() {
     const url = "http://localhost:1000";
     try {
         let response = await axios.post(
-            `${url}/myorderdata`,
+            `${import.meta.env.VITE_REACT_BACKEND_BASEURL}/myorderdata`,
             { email: userEmail },
             {
                 headers: {

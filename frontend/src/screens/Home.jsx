@@ -17,10 +17,11 @@ export default function Home() {
   }, [navigate]);
 
 
-  const url="http://localhost:1000"
+  // const url="http://localhost:1000"
   useEffect(() => {
+    console.log(import.meta.env.VITE_REACT_BACKEND_BASEURL);
     const fetchingData=async ()=>{
-      const fetched=await axios.post(`${url}/fetchData`,{headers:{
+      const fetched=await axios.post(`${import.meta.env.VITE_REACT_BACKEND_BASEURL}/fetchData`,{headers:{
         "Content-Type":"application/json"
       }}
           )

@@ -39,7 +39,7 @@ export default function Cart() {
         
       try {
             let response = await axios.post(
-                "http://localhost:1000/orderdata", 
+                `${import.meta.env.VITE_REACT_BACKEND_BASEURL}/orderdata`, 
                 {
                     order_data: cartData,  // Pass the cartData here
                     email: userEmail,      // Ensure userEmail is defined

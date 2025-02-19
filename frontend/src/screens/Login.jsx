@@ -12,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${url}/login`,
+        `${import.meta.env.VITE_REACT_BACKEND_BASEURL}/login`,
         { email, password },
         {
           headers: {
